@@ -3,6 +3,7 @@
  * periodical-beta functions and definitions
  *
  * @package periodical-beta
+ * @todo Add Read More Link, THA support
  */
 
 /**
@@ -40,6 +41,16 @@ function periodical-beta_setup() {
 	 * Customizer additions
 	 */
 	require( get_template_directory() . '/inc/customizer.php' );
+	
+	/**
+	 * Theme Widgets
+	 */
+	require( get_template_directory() . '/inc/theme-widgets.php' );
+	
+	/**
+	 * Support for the Theme Hooks Alliance hooks. Makes tweaking with child themes or plugins easier.
+	 */
+	require( get_template_directory() . '/inc/tha-theme-hooks.php' );
 
 	/**
 	 * WordPress.com-specific functions and definitions
@@ -65,10 +76,11 @@ function periodical-beta_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	/**
-	 * This theme uses wp_nav_menu() in one location.
+	 * This theme uses wp_nav_menu() in two locations.
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'periodical-beta' ),
+		'secondary' => __( 'Secondary Menu', 'periodical_beta' ),
 	) );
 
 	/**
@@ -121,6 +133,79 @@ function periodical-beta_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Homepage Featured Area', 'periodical_beta' ),
+		'id' => 'home-feature-area',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title featured-area-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Homepage Widget Area 1', 'periodical_beta' ),
+		'id' => 'home-widget-area-1',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Homepage Widget Area 2', 'periodical_beta' ),
+		'id' => 'home-widget-area-2',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Homepage Widget Area 3', 'periodical_beta' ),
+		'id' => 'home-widget-area-3',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Homepage Widget Area 4', 'periodical_beta' ),
+		'id' => 'home-widget-area-4',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Homepage Widget Area 5', 'periodical_beta' ),
+		'id' => 'home-widget-area-5',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Homepage Widget Area 6', 'periodical_beta' ),
+		'id' => 'home-widget-area-6',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Footer Widget Area', 'periodical_beta' ),
+		'id' => 'footer-widget-area',
+		'before_widget' => '<div id="%1$s" class="footer-widget widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title footer-widget-title">',
+		'after_title' => '</h3>',
+		'description' => 'By default, the theme supports 4 widgets in the footer. This can be adjusted by modifing the CSS.',
 	) );
 }
 add_action( 'widgets_init', 'periodical-beta_widgets_init' );

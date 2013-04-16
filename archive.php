@@ -11,6 +11,7 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
+		<?php tha_content_top(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -28,8 +29,12 @@ get_header(); ?>
 							 * what author we're dealing with (if that is the case).
 							*/
 							the_post();
-							printf( __( 'Author Archives: %s', 'periodical-beta' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
-							/* Since we called the_post() above, we need to
+							printf( __( 'Author: %s', 'periodical_beta' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+                            $author1_id=get_the_author_meta( 'id' );
+                            $author1_description=get_the_author_meta( 'description' );
+                            $author1_name=get_the_author_meta( 'display_name' );
+                            $author1_email=get_the_author_meta( 'user_email' );
+                            /* Since we called the_post() above, we need to
 							 * rewind the loop back to the beginning that way
 							 * we can run the loop properly, in full.
 							 */
@@ -79,6 +84,14 @@ get_header(); ?>
 						if ( ! empty( $tag_description ) ) :
 							echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
 						endif;
+						
+                    elseif ( is_author() ) :
+						    $avatar_size=get_theme_mod( 'periodical_avatar_size' , 60 );
+						    //show an author box if the user has a description filled out
+						    if ( ! empty( $author1_description ) ) : ?>
+						        <div class='author-box'><span class='gravatar'><?php echo get_avatar( $author1_email, $avatar_size ); ?></span><p class="author-description"><?php esc_attr_e($author1_description); ?></p></div>
+                        <?php
+                            endif;
 
 					endif;
 				?>
@@ -105,8 +118,10 @@ get_header(); ?>
 
 		<?php endif; ?>
 
+		<?php tha_content_bottom(); ?>
 		</div><!-- #content -->
 	</section><!-- #primary -->
+	<?php tha_content_after(); ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -10,7 +10,12 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
+            <?php 
+            tha_content_top();
+            tha_entry_before(); ?>
 			<article id="post-0" class="post error404 not-found">
+				
+				<?php tha_entry_top(); ?>
 				<header class="entry-header">
 					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'periodical-beta' ); ?></h1>
 				</header><!-- .entry-header -->
@@ -40,9 +45,15 @@ get_header(); ?>
 					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
 				</div><!-- .entry-content -->
+				<?php tha_entry_bottom(); ?>
+				
 			</article><!-- #post-0 .post .error404 .not-found -->
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
+            <?php 
+            tha_entry_after();
+            tha_content_bottom(); ?>
+            
+		</div><!-- #content .site-content -->
+	</div><!-- #primary .content-area -->
+	<?php tha_content_after(); ?>
 
 <?php get_footer(); ?>

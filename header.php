@@ -25,17 +25,29 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
-		<hgroup>
+		<hgroup class="site-headings">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
+		
+		<span class="logo"><img class="logo" src="<?php echo get_theme_mod( 'periodical-beta-logo' ); ?>" ></span>
 
-		<nav id="site-navigation" class="navigation-main" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'periodical-beta' ); ?></h1>
+		<div class="header-box">
+        <?php do_action( 'before-periodical-beta-header-box' ); ?>
+        <nav id="site-navigation" class="navigation-main" role="navigation">
+			<h1 class="menu-toggle"><?php _e( 'Main Menu', 'periodical-beta' ); ?></h1>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'periodical-beta' ); ?>"><?php _e( 'Skip to content', 'periodical-beta' ); ?></a></div>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
+		<?php do_action( 'after-periodical-beta-header-box' ); ?>
+		</div>
+		<?php do_action( 'periodical-beta-header' ); ?>
+		<nav role="navigation" class="secondary-navigation">
+		    <h1 class="menu-toggle"><?php _e( 'Secondary Menu', 'periodical-beta' ); ?></h1>
+		    <?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
+		</nav><!-- .secondary-navigation -->
+		<?php tha_header_bottom(); ?>
 	</header><!-- #masthead -->
 
 	<div id="main" class="site-main">

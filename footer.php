@@ -11,6 +11,9 @@
 	</div><!-- #main -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="widget-area" id="footer-widget-area">
+		    <?php dynamic_sidebar( 'footer-widget-area' ); ?>
+		</div>
 		<div class="site-info">
 			<?php do_action( 'periodical-beta_credits' ); ?>
 			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'periodical-beta' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'periodical-beta' ), 'WordPress' ); ?></a>

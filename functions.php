@@ -211,6 +211,17 @@ function periodical-beta_widgets_init() {
 add_action( 'widgets_init', 'periodical-beta_widgets_init' );
 
 /**
+ * Modifies excerpt to include a Read More link. This can be modified in a child theme by defining the "periodical-beta_excerpt_more" function
+ * Currently not in use.
+ *
+ *    if ( ! function_exists( 'periodical-beta_excerpt_more' ) ) :
+ *       function periodical-beta_excerpt_more( $more ) {
+ *       return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Read More</a>';
+ *    } endif;
+ *    add_filter( 'excerpt_more', 'periodical-beta_excerpt_more' );
+ */
+ 
+/**
  * Enqueue scripts and styles
  */
 function periodical-beta_scripts() {

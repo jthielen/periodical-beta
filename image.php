@@ -10,10 +10,13 @@ get_header();
 
 	<div id="primary" class="content-area image-attachment">
 		<div id="content" class="site-content" role="main">
+		<?php tha_content_top(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php tha_entry_before(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <?php tha_entry_top(); ?>
 				<header class="entry-header">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 
@@ -106,17 +109,24 @@ get_header();
 					<?php endif; ?>
 					<?php edit_post_link( __( 'Edit', 'periodical-beta' ), ' <span class="edit-link">', '</span>' ); ?>
 				</footer><!-- .entry-meta -->
+				<?php tha_entry_bottom(); ?>
 			</article><!-- #post-<?php the_ID(); ?> -->
+			<?php tha_entry_after(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() )
+				if ( comments_open() || '0' != get_comments_number() ) {
+					tha_comments_before();
 					comments_template();
+                    tha_comments_after();
+                }
 			?>
 
 		<?php endwhile; // end of the loop. ?>
 
+		<?php tha_content_bottom(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
+	<?php tha_content_after(); ?>
 
 <?php get_footer(); ?>

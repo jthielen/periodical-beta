@@ -10,7 +10,9 @@
 
 	</div><!-- #main -->
 
+	<?php tha_footer_before(); ?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php tha_footer_top(); ?>
 		<div class="widget-area" id="footer-widget-area">
 		    <?php dynamic_sidebar( 'footer-widget-area' ); ?>
 		</div>
@@ -20,10 +22,13 @@
 			<span class="sep"> | </span>
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'periodical-beta' ), 'Periodical Beta', '<a href="http://www.jont.cc" rel="designer">Jon Thielen</a>' ); ?>
 		</div><!-- .site-info -->
+		<?php tha_footer_bottom(); ?>
 	</footer><!-- #colophon -->
+	<?php tha_footer_after(); ?>
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
-
+<?php wp_footer(); 
+      tha_body_bottom(); 
+?>
 </body>
 </html>

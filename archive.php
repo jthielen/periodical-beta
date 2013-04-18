@@ -86,12 +86,12 @@ get_header(); ?>
 						endif;
 						
                     elseif ( is_author() ) :
-						    $avatar_size=get_theme_mod( 'periodical_avatar_size' , 60 );
-						    //show an author box if the user has a description filled out
-						    if ( ! empty( $author1_description ) ) : ?>
-						        <div class='author-box'><span class='gravatar'><?php echo get_avatar( $author1_email, $avatar_size ); ?></span><p class="author-description"><?php esc_attr_e($author1_description); ?></p></div>
-                        <?php
-                            endif;
+                        $avatar_size=get_theme_mod( 'periodical_avatar_size' , 60 );
+                        //show an author box if the user has a description filled out
+                        if ( ! empty( $author1_description ) ) : ?>
+                            <div class='author-box'><span class='gravatar'><?php echo get_avatar( $author1_email, $avatar_size ); ?></span><p class="author-description"><?php esc_attr_e($author1_description); ?></p></div>
+                    <?php
+                        endif;
 
 					endif;
 				?>

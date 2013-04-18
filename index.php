@@ -15,6 +15,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
+		<?php tha_content_top(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -39,8 +40,10 @@ get_header(); ?>
 
 		<?php endif; ?>
 
+		<?php tha_content_bottom(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
+	<?php tha_content_after(); ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

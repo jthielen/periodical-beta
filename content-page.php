@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package periodical-beta
+ * @package periodical_beta
  */
 ?>
 
@@ -15,9 +15,9 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'periodical-beta' ), 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'periodical_beta' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'periodical-beta' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'periodical_beta' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 	<?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->
 <?php tha_entry_after(); ?>

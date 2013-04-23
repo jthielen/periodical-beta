@@ -13,7 +13,7 @@
 	<?php } // if ( ! empty( $header_image ) ) ?>
 
  *
- * @package periodical-beta
+ * @package periodical_beta
  */
 
 /**
@@ -26,25 +26,25 @@
  *
  * @todo Rework this function to remove WordPress 3.4 support when WordPress 3.6 is released.
  *
- * @uses periodical-beta_header_style()
- * @uses periodical-beta_admin_header_style()
- * @uses periodical-beta_admin_header_image()
+ * @uses periodical_beta_header_style()
+ * @uses periodical_beta_admin_header_style()
+ * @uses periodical_beta_admin_header_image()
  *
- * @package periodical-beta
+ * @package periodical_beta
  */
-function periodical-beta_custom_header_setup() {
+function periodical_beta_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
 		'default-text-color'     => '000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'periodical-beta_header_style',
-		'admin-head-callback'    => 'periodical-beta_admin_header_style',
-		'admin-preview-callback' => 'periodical-beta_admin_header_image',
+		'wp-head-callback'       => 'periodical_beta_header_style',
+		'admin-head-callback'    => 'periodical_beta_admin_header_style',
+		'admin-preview-callback' => 'periodical_beta_admin_header_image',
 	);
 
-	$args = apply_filters( 'periodical-beta_custom_header_args', $args );
+	$args = apply_filters( 'periodical_beta_custom_header_args', $args );
 
 	if ( function_exists( 'wp_get_theme' ) ) {
 		add_theme_support( 'custom-header', $args );
@@ -57,7 +57,7 @@ function periodical-beta_custom_header_setup() {
 		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
 	}
 }
-add_action( 'after_setup_theme', 'periodical-beta_custom_header_setup' );
+add_action( 'after_setup_theme', 'periodical_beta_custom_header_setup' );
 
 /**
  * Shiv for get_custom_header().
@@ -70,7 +70,7 @@ add_action( 'after_setup_theme', 'periodical-beta_custom_header_setup' );
  * @todo Remove this function when WordPress 3.6 is released.
  * @return stdClass All properties represent attributes of the curent header image.
  *
- * @package periodical-beta
+ * @package periodical_beta
  */
 
 if ( ! function_exists( 'get_custom_header' ) ) {
@@ -84,13 +84,13 @@ if ( ! function_exists( 'get_custom_header' ) ) {
 	}
 }
 
-if ( ! function_exists( 'periodical-beta_header_style' ) ) :
+if ( ! function_exists( 'periodical_beta_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see periodical-beta_custom_header_setup().
+ * @see periodical_beta_custom_header_setup().
  */
-function periodical-beta_header_style() {
+function periodical_beta_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
@@ -121,15 +121,15 @@ function periodical-beta_header_style() {
 	</style>
 	<?php
 }
-endif; // periodical-beta_header_style
+endif; // periodical_beta_header_style
 
-if ( ! function_exists( 'periodical-beta_admin_header_style' ) ) :
+if ( ! function_exists( 'periodical_beta_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see periodical-beta_custom_header_setup().
+ * @see periodical_beta_custom_header_setup().
  */
-function periodical-beta_admin_header_style() {
+function periodical_beta_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -149,15 +149,15 @@ function periodical-beta_admin_header_style() {
 	</style>
 <?php
 }
-endif; // periodical-beta_admin_header_style
+endif; // periodical_beta_admin_header_style
 
-if ( ! function_exists( 'periodical-beta_admin_header_image' ) ) :
+if ( ! function_exists( 'periodical_beta_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see periodical-beta_custom_header_setup().
+ * @see periodical_beta_custom_header_setup().
  */
-function periodical-beta_admin_header_image() { ?>
+function periodical_beta_admin_header_image() { ?>
 	<div id="headimg">
 		<?php
 		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
@@ -173,4 +173,4 @@ function periodical-beta_admin_header_image() { ?>
 		<?php endif; ?>
 	</div>
 <?php }
-endif; // periodical-beta_admin_header_image
+endif; // periodical_beta_admin_header_image

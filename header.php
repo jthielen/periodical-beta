@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package periodical-beta
+ * @package periodical_beta
  */
 ?><!DOCTYPE html>
 <?php tha_html_before(); ?>
@@ -40,23 +40,23 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
 		
-		<span class="logo"><img class="logo" src="<?php echo get_theme_mod( 'periodical-beta-logo' ); ?>" ></span>
+		<span class="logo"><img class="logo" src="<?php echo get_theme_mod( 'periodical_beta-logo' ); ?>" ></span>
 
 		<div class="header-box">
-        <?php do_action( 'before-periodical-beta-header-box' ); ?>
+        <?php do_action( 'before-periodical_beta-header-box' ); ?>
             <nav id="site-navigation" class="navigation-main" role="navigation">
-                <h1 class="menu-toggle"><?php _e( 'Main Menu', 'periodical-beta' ); ?></h1>
-                <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'periodical-beta' ); ?>"><?php _e( 'Skip to content', 'periodical-beta' ); ?></a></div>
+                <h1 class="menu-toggle"><?php _e( 'Main Menu', 'periodical_beta' ); ?></h1>
+                <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'periodical_beta' ); ?>"><?php _e( 'Skip to content', 'periodical_beta' ); ?></a></div>
     
                 <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
             </nav><!-- #site-navigation -->
-		<?php do_action( 'after-periodical-beta-header-box' ); ?>
+		<?php do_action( 'after-periodical_beta-header-box' ); ?>
 		</div>
 		
-		<?php do_action( 'periodical-beta-header' ); ?>
+		<?php do_action( 'periodical_beta-header' ); ?>
 		
         <nav role="navigation" class="secondary-navigation">
-		    <h1 class="menu-toggle"><?php _e( 'Secondary Menu', 'periodical-beta' ); ?></h1>
+		    <h1 class="menu-toggle"><?php _e( 'Secondary Menu', 'periodical_beta' ); ?></h1>
 		    <?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
 		</nav><!-- .secondary-navigation -->
 		

@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package periodical-beta
+ * @package periodical_beta
  */
 ?>
 	<?php tha_sidebars_before(); ?>
@@ -16,14 +16,14 @@
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'periodical-beta' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Archives', 'periodical_beta' ); ?></h1>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
 			</aside>
 
 			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'periodical-beta' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Meta', 'periodical_beta' ); ?></h1>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>

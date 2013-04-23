@@ -4,7 +4,7 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package periodical-beta
+ * @package periodical_beta
  */
 ?>
 
@@ -17,10 +17,10 @@
 		    <?php dynamic_sidebar( 'footer-widget-area' ); ?>
 		</div>
 		<div class="site-info">
-			<?php do_action( 'periodical-beta_credits' ); ?>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'periodical-beta' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'periodical-beta' ), 'WordPress' ); ?></a>
+			<?php do_action( 'periodical_beta_credits' ); ?>
+			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'periodical_beta' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'periodical_beta' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'periodical-beta' ), 'Periodical Beta', '<a href="http://www.jont.cc" rel="designer">Jon Thielen</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'periodical_beta' ), 'Periodical Beta', '<a href="http://www.jont.cc" rel="designer">Jon Thielen</a>' ); ?>
 		</div><!-- .site-info -->
 		<?php tha_footer_bottom(); ?>
 	</footer><!-- #colophon -->

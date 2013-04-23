@@ -2,7 +2,7 @@
 /**
  * WordPress.com-specific functions and definitions
  *
- * @package periodical-beta
+ * @package periodical_beta
  */
 
 global $themecolors;

@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package periodical-beta
+ * @package periodical_beta
  */
 
 get_header(); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php periodical-beta_content_nav( 'nav-below' ); ?>
+			<?php periodical_beta_content_nav( 'nav-below' ); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

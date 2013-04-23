@@ -4,7 +4,7 @@
  * This uses index.php style listings by default, but you can enable the 
  * widget based homepage by checking the customizer option.
  *
- * @package Periodical-Beta
+ * @package periodical_beta
  */
 
 get_header(); ?>

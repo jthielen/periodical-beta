@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package periodical-beta
+ * @package periodical_beta
  */
 
 get_header(); ?>
@@ -32,7 +32,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php periodical-beta_content_nav( 'nav-below' ); ?>
+			<?php periodical_beta_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 
